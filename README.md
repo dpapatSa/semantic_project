@@ -1,3 +1,1 @@
 semantic_project
-
-gtyygty
