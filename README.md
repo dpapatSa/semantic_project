@@ -1,4 +1,1 @@
 semantic_project
-
-
-alaksnrfkjlseglj
