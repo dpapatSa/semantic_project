@@ -36,7 +36,8 @@ public class Ontology {
         this.c = (HttpURLConnection) url.openConnection();    // connecting to url
         this.c.setRequestMethod("GET");
         this.in = new BufferedReader(new InputStreamReader(c.getInputStream()));    // stream to resource
-        while ((this.str = this.in.readLine()) != null)    // reading data
+        responsestring = "";
+        while ((this.str = this.in.readLine()) != null )    // reading data
         {
             this.responsestring += str + "\n";             // process the response and save it in some string or so
         }

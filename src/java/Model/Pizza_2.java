@@ -1,40 +1,62 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.io.IOException;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
- * REST Web Service
  *
  * @author Tasos
  */
 @Path("pizza/metric2")
 public class Pizza_2 {
-    
-Ontology pizza = new Ontology("pizza");
     @Context
-    private UriInfo context;
-    public String Jsonstring;
-
+    private Ontology pizza;
+    private Double attributeRich;
+    private JSONObject countAttributes, countClasses;
+    private  JSONArray arr;
+    private String value, attribute_richness, Jsonstring;
+    private Double intValue1 = 0.0, intValue2 = 0.0;
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() throws IOException {
-               
-        pizza.setQuerySpaql("select distinct ?Concept where {[] a ?Concept} LIMIT 100"); //Sparql query
+    
+    public String getJson() throws IOException, JSONException {
+        pizza = new Ontology("pizza");  // Ontology object type pizza       
+        
+        pizza.setQuerySpaql("Select distinct (count(?Subject) as ?countAxioms)\n" +"where {\n" +"[] a ?Subject\n" +"}"); //Sparql query
         pizza.setConnection(); //Get the data and write them in String with json format
-
-        //TODO return proper representation object
-        return pizza.getResponsestring();
+        
+        // Parse in the string pizza.getResponsestring() type JSON 
+        countAttributes = new JSONObject(pizza.getResponsestring());
+        arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");
+        }
+        intValue1 = Double.parseDouble(value); //Number of axioms
+        
+        // Count the number of classes
+        pizza.setQuerySpaql("SELECT (COUNT(DISTINCT ?class) as ?countClass)\n" +"WHERE {\n" +"{\n" +"[] rdf:type ?class\n" +"}UNION{\n" +"?class rdf:type owl:Class\n" +"}UNION{\n" +"?class rdf:type rdfs:Class\n" +"}\n" +"}"); //Sparql query
+        pizza.setConnection(); //Get the data and write them in String with json format
+        
+        // Parse in the string pizza.getResponsestring() type JSON 
+        countClasses = new JSONObject(pizza.getResponsestring());
+        arr = countClasses.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
+        }
+        intValue2 = Double.parseDouble(value); //Number of classes
+        
+        attributeRich = intValue1/intValue2; // Calculate atrribute richness
+        attribute_richness=String.valueOf(attributeRich); //Convert to string
+        
+        //return representation object
+        return attribute_richness;
     }
 
 }
