@@ -1,6 +1,7 @@
 # Semantic_project 2020-2021
 
-### Specs
+### Specifications 
+> Specifically for Netbeans 8.2 RC
 
 - JDK 1.8 
 - Glassifish Server 4.1.1
