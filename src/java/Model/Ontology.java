@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
  * @author Tasos
  */
 public class Ontology {
+
     public String responsestring = "";
     public String defaultGraph;
     public String querySpaql;
@@ -30,14 +31,14 @@ public class Ontology {
     public void setConnection() throws IOException {
         // Ftiaxnei to aitima pou tha kanoume get ta dedomena
         this.contextType = "application/json";
-        this.urlString = "http://139.91.210.25:8890/sparql?default-graph-uri=" + URLEncoder.encode(getDefaultGraph(),StandardCharsets.UTF_8.toString()) + "&query=" 
-        + URLEncoder.encode(getQuerySpaql(),StandardCharsets.UTF_8.toString()) + "&format=" + URLEncoder.encode(this.contextType,StandardCharsets.UTF_8.toString()) + "&timeout=0&debug=on";
+        this.urlString = "http://139.91.210.25:8890/sparql?default-graph-uri=" + URLEncoder.encode(getDefaultGraph(), StandardCharsets.UTF_8.toString()) + "&query="
+                + URLEncoder.encode(getQuerySpaql(), StandardCharsets.UTF_8.toString()) + "&format=" + URLEncoder.encode(this.contextType, StandardCharsets.UTF_8.toString()) + "&timeout=0&debug=on";
         this.url = new URL(urlString);
         this.c = (HttpURLConnection) url.openConnection();    // connecting to url
         this.c.setRequestMethod("GET");
         this.in = new BufferedReader(new InputStreamReader(c.getInputStream()));    // stream to resource
         responsestring = "";
-        while ((this.str = this.in.readLine()) != null )    // reading data
+        while ((this.str = this.in.readLine()) != null) // reading data
         {
             this.responsestring += str + "\n";             // process the response and save it in some string or so
         }
