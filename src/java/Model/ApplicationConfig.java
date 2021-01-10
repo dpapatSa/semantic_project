@@ -29,26 +29,26 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(Model.CidocStats.class);
-        resources.add(Model.Cidoc_1.class);
-        resources.add(Model.Cidoc_2.class);
-        resources.add(Model.Cidoc_3.class);
-        resources.add(Model.DublincoreStats.class);
-        resources.add(Model.Dublincore_1.class);
-        resources.add(Model.Dublincore_2.class);
-        resources.add(Model.Dublincore_3.class);
-        resources.add(Model.FoafStats.class);
-        resources.add(Model.Foaf_1.class);
-        resources.add(Model.Foaf_2.class);
-        resources.add(Model.Foaf_3.class);
-        resources.add(Model.MusicontologyStats.class);
-        resources.add(Model.Musicontology_1.class);
-        resources.add(Model.Musicontology_2.class);
-        resources.add(Model.Musicontology_3.class);
-        resources.add(Model.PizzaStats.class);
-        resources.add(Model.Pizza_1.class);
-        resources.add(Model.Pizza_2.class);
-        resources.add(Model.Pizza_3.class);
+        resources.add(Cidoc.CidocStats.class);
+        resources.add(Cidoc.Cidoc_1.class);
+        resources.add(Cidoc.Cidoc_2.class);
+        resources.add(Cidoc.Cidoc_3.class);
+        resources.add(Dublincore.DublincoreStats.class);
+        resources.add(Dublincore.Dublincore_1.class);
+        resources.add(Dublincore.Dublincore_2.class);
+        resources.add(Dublincore.Dublincore_3.class);
+        resources.add(Foaf.FoafStats.class);
+        resources.add(Foaf.Foaf_1.class);
+        resources.add(Foaf.Foaf_2.class);
+        resources.add(Foaf.Foaf_3.class);
+        resources.add(Musicontology.MusicontologyStats.class);
+        resources.add(Musicontology.Musicontology_1.class);
+        resources.add(Musicontology.Musicontology_2.class);
+        resources.add(Musicontology.Musicontology_3.class);
+        resources.add(Pizza.PizzaStats.class);
+        resources.add(Pizza.Pizza_1.class);
+        resources.add(Pizza.Pizza_2.class);
+        resources.add(Pizza.Pizza_3.class);
     }
     
 }
