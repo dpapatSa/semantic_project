@@ -41,6 +41,7 @@ public class ApplicationConfig extends Application {
         resources.add(Foaf.Foaf_1.class);
         resources.add(Foaf.Foaf_2.class);
         resources.add(Foaf.Foaf_3.class);
+        resources.add(Model.CORSResponseFilter.class);
         resources.add(Musicontology.MusicontologyStats.class);
         resources.add(Musicontology.Musicontology_1.class);
         resources.add(Musicontology.Musicontology_2.class);
