@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("musicontology/metric2")
-public class Musicontology_2 {
+public class Musicontology_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
     private Ontology musicontology;

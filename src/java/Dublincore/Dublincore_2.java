@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("dublincore/metric2")
-public class Dublincore_2 {
+public class Dublincore_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
     private Ontology dublincore;

@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("pizza/metric2")
-public class Pizza_2 {
+public class Pizza_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
     private Ontology pizza;

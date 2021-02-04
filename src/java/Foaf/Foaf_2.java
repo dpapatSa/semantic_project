@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("foaf/metric2")
-public class Foaf_2 {
+public class Foaf_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
     private Ontology foaf;

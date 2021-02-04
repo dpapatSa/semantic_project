@@ -15,7 +15,7 @@ import org.json.JSONObject;
 @Path("pizza/stats")
 public class PizzaStats {
 
-    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms;
+    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms, noOfTriples, noOfAllClasses;
     private int intValue = 0;
     private JSONObject countClassesObject;
     private JSONArray arr;
@@ -96,13 +96,43 @@ public class PizzaStats {
         intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfAxioms = String.valueOf(intValue);
+        
+        // Count the number of triples
+        pizza.setQuerySpaql(stats.getStat6()); // Sparql query
+        pizza.setConnection(); // Get the data and write them in String cidoc.getResponsestring() with json format
 
+        // Parse in the string cidoc.getResponsestring() type JSON 
+        countClassesObject = new JSONObject(pizza.getResponsestring());
+        arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countTriples").getString("value");
+        }
+        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+
+        noOfTriples = String.valueOf(intValue);
+        
+        // Count the number of unique classes
+        pizza.setQuerySpaql(stats.getStat7()); // Sparql query
+        pizza.setConnection(); // Get the data and write them in String pizza.getResponsestring() with json format
+
+        // Parse in the string pizza.getResponsestring() type JSON 
+        countClassesObject = new JSONObject(pizza.getResponsestring());
+        arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countAllClass").getString("value");
+        }
+        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+
+        noOfAllClasses = String.valueOf(intValue);
+        
         String json = Json.createObjectBuilder()
                 .add("noOfClasses", noOfClasses)
                 .add("noObjProperties", noObjProperties)
                 .add("noDTProperties", noDTProperties)
                 .add("noOfIndividuals", noOfIndividuals)
                 .add("noOfAxioms", noOfAxioms)
+                .add("noOfTriples", noOfTriples)
+                .add("noOfAllClasses", noOfAllClasses)
                 .build()
                 .toString();
 

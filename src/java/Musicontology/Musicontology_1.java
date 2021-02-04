@@ -16,7 +16,13 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("musicontology/metric1")
-public class Musicontology_1 {
+public class Musicontology_1 { 
+//Size(M) = |M| = |C| + |OP| + |DP| + |I|
+// |M| = number of entities in a module
+// |C| = class size
+// |OP| = object property size 
+// |DP| = data property size
+// |I| = individual size
 
     private String value, size;
     private int intValue = 0;

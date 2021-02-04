@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("pizza/metric3")
-public class Pizza_3 {
+public class Pizza_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
 
     @Context
     private Ontology pizza;

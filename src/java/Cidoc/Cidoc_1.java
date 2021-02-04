@@ -16,8 +16,14 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("cidoc/metric1")
-public class Cidoc_1 {
-
+public class Cidoc_1 { 
+//Size(M) = |M| = |C| + |OP| + |DP| + |I|
+// |M| = number of entities in a module
+// |C| = class size
+// |OP| = object property size 
+// |DP| = data property size
+// |I| = individual size
+    
     private String value, size;
     private int intValue = 0;
     private JSONObject countClassesObject, countObjectProp, dataPropObject, individualObject;

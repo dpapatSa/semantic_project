@@ -16,35 +16,22 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("cidoc/metric2")
-public class Cidoc_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
-
+@Path("cidoc/metric5")
+public class Cidoc_5{ // Average population P: P = Number of individuals / Classes
 
     @Context
     private Ontology cidoc;
-    private Double attributeRich;
-    private JSONObject countAttributes, countClasses;
+    private JSONObject individualObject, countClasses;
     private JSONArray arr;
-    private String value, attribute_richness, Jsonstring;
-    private Double intValue1 = 0.0, intValue2 = 0.0;
+    private String size, value;
+    private Double doubleValue = 0.0;
     private Statistics stats = new Statistics();
-
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
         cidoc = new Ontology("cidoc");  // Ontology object type cidoc       
-
-        cidoc.setQuerySpaql(stats.getStat5()); //Sparql query
-        cidoc.setConnection(); //Get the data and write them in String with json format
-
-        // Parse in the string cidoc.getResponsestring() type JSON 
-        countAttributes = new JSONObject(cidoc.getResponsestring());
-        arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
-        for (int i = 0; i < arr.length(); i++) {
-            value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");
-        }
-        intValue1 = Double.parseDouble(value); //Number of axioms
 
         // Count the number of classes
         cidoc.setQuerySpaql(stats.getStat1()); //Sparql query
@@ -56,13 +43,25 @@ public class Cidoc_2 { // Attribute richness AR(M) = Number of attributes of all
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
         }
-        intValue2 = Double.parseDouble(value); //Number of classes
+        doubleValue = Double.parseDouble(value); //Number of classes
 
-        attributeRich = intValue1 / intValue2; // Calculate atrribute richness
-        attribute_richness = String.valueOf(attributeRich); //Convert to string
+         //Count the number of individuals
+        cidoc.setQuerySpaql(stats.getStat4()); //Sparql query
+        cidoc.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
 
-        //return representation object
-        return attribute_richness;
+        // Parse in the string cidoc.getResponsestring() type JSON 
+        individualObject = new JSONObject(cidoc.getResponsestring());
+        arr = individualObject.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countIndividual").getString("value");
+        }
+        doubleValue += Double.parseDouble(value);  // Add the value from query in the variable value
+
+        size = String.valueOf(doubleValue); // Final size value
+        
+        
+        // return the the average population
+        return size;
     }
 
 }

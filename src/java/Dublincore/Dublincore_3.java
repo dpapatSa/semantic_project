@@ -17,7 +17,7 @@ import org.json.JSONObject;
  * @author Tasos
  */
 @Path("dublincore/metric3")
-public class Dublincore_3 {
+public class Dublincore_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
 
     @Context
     private Ontology dublincore;

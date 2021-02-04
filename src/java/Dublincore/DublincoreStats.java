@@ -15,7 +15,7 @@ import org.json.JSONObject;
 @Path("dublincore/stats")
 public class DublincoreStats {
 
-    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms;
+    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms, noOfTriples, noOfAllClasses;
     private int intValue = 0;
     private JSONObject countClassesObject;
     private JSONArray arr;
@@ -96,6 +96,35 @@ public class DublincoreStats {
         intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfAxioms = String.valueOf(intValue);
+        
+        // Count the number of triples
+        dublincore.setQuerySpaql(stats.getStat6()); // Sparql query
+        dublincore.setConnection(); // Get the data and write them in String cidoc.getResponsestring() with json format
+
+        // Parse in the string cidoc.getResponsestring() type JSON 
+        countClassesObject = new JSONObject(dublincore.getResponsestring());
+        arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countTriples").getString("value");
+        }
+        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+
+        noOfTriples = String.valueOf(intValue);
+        
+         // Count the number of unique classes
+        dublincore.setQuerySpaql(stats.getStat7()); // Sparql query
+        dublincore.setConnection(); // Get the data and write them in String dublincore.getResponsestring() with json format
+
+        // Parse in the string dublincore.getResponsestring() type JSON 
+        countClassesObject = new JSONObject(dublincore.getResponsestring());
+        arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
+        for (int i = 0; i < arr.length(); i++) {
+            value = arr.getJSONObject(i).getJSONObject("countAllClass").getString("value");
+        }
+        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+
+        noOfAllClasses = String.valueOf(intValue);
+        
 
         String json = Json.createObjectBuilder()
                 .add("noOfClasses", noOfClasses)
@@ -103,6 +132,8 @@ public class DublincoreStats {
                 .add("noDTProperties", noDTProperties)
                 .add("noOfIndividuals", noOfIndividuals)
                 .add("noOfAxioms", noOfAxioms)
+                .add("noOfTriples", noOfTriples)
+                .add("noOfAllClasses", noOfAllClasses)
                 .build()
                 .toString();
 

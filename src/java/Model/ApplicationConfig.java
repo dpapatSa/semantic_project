@@ -33,23 +33,37 @@ public class ApplicationConfig extends Application {
         resources.add(Cidoc.Cidoc_1.class);
         resources.add(Cidoc.Cidoc_2.class);
         resources.add(Cidoc.Cidoc_3.class);
+        resources.add(Cidoc.Cidoc_4.class);
+        resources.add(Cidoc.Cidoc_5.class);
+        resources.add(Cidoc.Cidoc_6.class);
         resources.add(Dublincore.DublincoreStats.class);
         resources.add(Dublincore.Dublincore_1.class);
         resources.add(Dublincore.Dublincore_2.class);
         resources.add(Dublincore.Dublincore_3.class);
+        resources.add(Dublincore.Dublincore_4.class);
+        resources.add(Dublincore.Dublincore_5.class);
+        resources.add(Dublincore.Dublincore_6.class);
         resources.add(Foaf.FoafStats.class);
         resources.add(Foaf.Foaf_1.class);
         resources.add(Foaf.Foaf_2.class);
         resources.add(Foaf.Foaf_3.class);
-        resources.add(Model.CORSResponseFilter.class);
+        resources.add(Foaf.Foaf_4.class);
+        resources.add(Foaf.Foaf_5.class);
+        resources.add(Foaf.Foaf_6.class);
         resources.add(Musicontology.MusicontologyStats.class);
         resources.add(Musicontology.Musicontology_1.class);
         resources.add(Musicontology.Musicontology_2.class);
         resources.add(Musicontology.Musicontology_3.class);
+        resources.add(Musicontology.Musicontology_4.class);
+        resources.add(Musicontology.Musicontology_5.class);
+        resources.add(Musicontology.Musicontology_6.class);
         resources.add(Pizza.PizzaStats.class);
         resources.add(Pizza.Pizza_1.class);
         resources.add(Pizza.Pizza_2.class);
         resources.add(Pizza.Pizza_3.class);
+        resources.add(Pizza.Pizza_4.class);
+        resources.add(Pizza.Pizza_5.class);
+        resources.add(Pizza.Pizza_6.class);
     }
     
 }
