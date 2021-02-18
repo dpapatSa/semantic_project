@@ -53,7 +53,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("\r\n");
       out.write("    <body>\r\n");
-      out.write("        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>\r\n");
+      out.write("        <p>DOULEUEI Hello! This is the default welcome page for a Spring Web MVC project.</p>\r\n");
       out.write("        <p><i>To display a different welcome page for this project, modify</i>\r\n");
       out.write("            <tt>index.jsp</tt> <i>, or create your own welcome page then change\r\n");
       out.write("                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new\r\n");
