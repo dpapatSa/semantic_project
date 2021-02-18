@@ -30,11 +30,11 @@ public class Statistics {
     6. ---------- Count the number of relationships ----------
         "SELECT (COUNT(*) as ?countTriples)\n" + 
         "WHERE {" + "?s ?p ?o\n" +"}"
-    7. ---------- Count the number of all classes ----------
-        "SELECT (COUNT(?class) as ?countClass)\n" + 
-        "WHERE {\n" + "{\n" + "[] rdf:type ?class\n" + 
-        "}UNION{\n" + "?class rdf:type owl:Class\n" + 
-        "}UNION{\n" + "?class rdf:type rdfs:Class\n" + 
+    7. ---------- Count the number of same classes ----------
+        "SELECT (COUNT(DISTINCT ?equivalentClass) as ?countSameClass)\n" + 
+        "WHERE {\n" + "{\n" + "[] rdf:type ?equivalentClass\n" + 
+        "}UNION{\n" + "?class rdf:type owl:equivalentClass\n" + 
+        "}UNION{\n" + "?class rdf:type rdfs:equivalentClass\n" + 
         "}\n" + "}";
     */
     public String stat1;
@@ -52,7 +52,7 @@ public class Statistics {
         this.stat4 = "SELECT (COUNT(DISTINCT ?individual) as ?countIndividual)\n" + "WHERE {\n" + "{\n" + "[] rdf:type ?individual\n" + "}UNION{\n" + "?individual rdf:type owl:NamedIndividual\n" + "}UNION{\n" + "?individual rdf:type rdfs:NamedIndividual\n" + "}\n" + "}";
         this.stat5 = "SELECT distinct (count(?Subject) as ?countAxioms)" + "WHERE {" + "[] a ?Subject" + "}";
         this.stat6 = "SELECT (COUNT(*) as ?countTriples)" + "WHERE {" + "?s ?p ?o" +"}";
-        this.stat7 = "SELECT (COUNT(?class) as ?countAllClass)\n" + "WHERE {\n" + "{\n" + "[] rdf:type ?class\n" + "}UNION{\n" + "?class rdf:type owl:Class\n" + "}UNION{\n" + "?class rdf:type rdfs:Class\n" + "}\n" + "}";
+        this.stat7 = "SELECT (COUNT(DISTINCT ?equivalentClass) as ?countSameClass)\n" + "WHERE {\n" + "{\n" + "[] rdf:type ?equivalentClass \n" + "}UNION{\n" + "?class rdf:type owl:equivalentClass \n" + "}UNION{\n" + "?class rdf:type rdfs:equivalentClass\n" + "}\n" + "}";
     }
 
     public String getStat1() {

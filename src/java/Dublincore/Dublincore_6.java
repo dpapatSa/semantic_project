@@ -49,13 +49,11 @@ public class Dublincore_6 { //Equivalence Ratio (ER): ER = SameClasses / Number 
         countSameObject = new JSONObject(dublincore.getResponsestring());
         arr = countSameObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
-            value = arr.getJSONObject(i).getJSONObject("countAllClass").getString("value");
+            value = arr.getJSONObject(i).getJSONObject("countSameClass").getString("value");
         }
         intValue2 = Integer.parseInt(value); // Add the value from query in the variable intValue
-        
-        intValue2 = intValue2 - intValue1; // Same classes = All classes - Unique classes
-        
-        crr = (double)intValue2 / intValue1;
+     
+        crr = (double)intValue2 / intValue1; // SameClasses / Number of All Classes 
         crrString = String.valueOf(crr); // Final size value
         return crrString;
     }

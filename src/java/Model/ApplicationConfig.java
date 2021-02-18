@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(Cidoc.CidocPitfalls.class);
         resources.add(Cidoc.CidocStats.class);
         resources.add(Cidoc.Cidoc_1.class);
         resources.add(Cidoc.Cidoc_2.class);
@@ -36,6 +37,7 @@ public class ApplicationConfig extends Application {
         resources.add(Cidoc.Cidoc_4.class);
         resources.add(Cidoc.Cidoc_5.class);
         resources.add(Cidoc.Cidoc_6.class);
+        resources.add(Dublincore.DublincorePitfalls.class);
         resources.add(Dublincore.DublincoreStats.class);
         resources.add(Dublincore.Dublincore_1.class);
         resources.add(Dublincore.Dublincore_2.class);
@@ -43,6 +45,7 @@ public class ApplicationConfig extends Application {
         resources.add(Dublincore.Dublincore_4.class);
         resources.add(Dublincore.Dublincore_5.class);
         resources.add(Dublincore.Dublincore_6.class);
+        resources.add(Foaf.FoafPitfalls.class);
         resources.add(Foaf.FoafStats.class);
         resources.add(Foaf.Foaf_1.class);
         resources.add(Foaf.Foaf_2.class);
@@ -50,6 +53,7 @@ public class ApplicationConfig extends Application {
         resources.add(Foaf.Foaf_4.class);
         resources.add(Foaf.Foaf_5.class);
         resources.add(Foaf.Foaf_6.class);
+        resources.add(Musicontology.MusicontologyPitfalls.class);
         resources.add(Musicontology.MusicontologyStats.class);
         resources.add(Musicontology.Musicontology_1.class);
         resources.add(Musicontology.Musicontology_2.class);
@@ -57,6 +61,7 @@ public class ApplicationConfig extends Application {
         resources.add(Musicontology.Musicontology_4.class);
         resources.add(Musicontology.Musicontology_5.class);
         resources.add(Musicontology.Musicontology_6.class);
+        resources.add(Pizza.PizzaPitfalls.class);
         resources.add(Pizza.PizzaStats.class);
         resources.add(Pizza.Pizza_1.class);
         resources.add(Pizza.Pizza_2.class);

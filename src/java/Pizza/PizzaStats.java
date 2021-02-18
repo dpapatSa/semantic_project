@@ -15,7 +15,7 @@ import org.json.JSONObject;
 @Path("pizza/stats")
 public class PizzaStats {
 
-    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms, noOfTriples, noOfAllClasses;
+    private String value, noOfClasses, noObjProperties, noDTProperties, noOfIndividuals, noOfAxioms, noOfTriples, noOfSameClasses;
     private int intValue = 0;
     private JSONObject countClassesObject;
     private JSONArray arr;
@@ -119,11 +119,11 @@ public class PizzaStats {
         countClassesObject = new JSONObject(pizza.getResponsestring());
         arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
-            value = arr.getJSONObject(i).getJSONObject("countAllClass").getString("value");
+            value = arr.getJSONObject(i).getJSONObject("countSameClass").getString("value");
         }
         intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
 
-        noOfAllClasses = String.valueOf(intValue);
+        noOfSameClasses = String.valueOf(intValue);
         
         String json = Json.createObjectBuilder()
                 .add("noOfClasses", noOfClasses)
@@ -132,7 +132,7 @@ public class PizzaStats {
                 .add("noOfIndividuals", noOfIndividuals)
                 .add("noOfAxioms", noOfAxioms)
                 .add("noOfTriples", noOfTriples)
-                .add("noOfAllClasses", noOfAllClasses)
+                .add("noOfSameClasses", noOfSameClasses)
                 .build()
                 .toString();
 
