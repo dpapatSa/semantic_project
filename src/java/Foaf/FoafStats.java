@@ -51,7 +51,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countObject").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noObjProperties = String.valueOf(intValue);
 
@@ -65,7 +65,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countDataType").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noDTProperties = String.valueOf(intValue);
 
@@ -79,7 +79,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countIndividual").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfIndividuals = String.valueOf(intValue);
 
@@ -93,7 +93,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfAxioms = String.valueOf(intValue);
         
@@ -107,7 +107,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countTriples").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfTriples = String.valueOf(intValue);
         
@@ -121,7 +121,7 @@ public class FoafStats {
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countSameClass").getString("value");
         }
-        intValue += Integer.parseInt(value); // Add the value from query in the variable intValue
+        intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
 
         noOfSameClasses = String.valueOf(intValue);
 
