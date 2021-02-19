@@ -50,9 +50,7 @@ npm build
 
 ##### Backend
 
-> Iraklis Skepasianos (skepasianos.iraklis@gmail.com)
-> 
-> Tasos Koumarelis ()
->  Emmanouhl Kritikakis ()
->  
->  > > Kuriakos Kalkanis ()
+> 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com)
+> 	Tasos Koumarelis ()
+> 	Emmanouhl Kritikakis ()
+> 	Kuriakos Kalkanis ()
