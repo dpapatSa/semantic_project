@@ -1,0 +1,18 @@
+{
+  "dashboard": { 
+    "performance": "Values", 
+    "totalShipments": "Metrics",
+    "chartCategories": ["Comparsion of Ontologies"] 
+  },
+  "sidebar": {
+    "Home": "Home",
+    "Metric1": "Size of Ontology",
+    "Metric2": "Approprietness of Module Size", 
+    "Metric3": "Attribute Richness",
+    "Metric4": "Average Population",
+    "Metric5": "Class/Relation Ratio (CRR)",
+    "Metric6": "Equivalence Ratio (ER)",
+    "Statistics": "Statistics",
+    "Pitfalls": "Pitfalls"
+  }
+}
