@@ -13,7 +13,9 @@
 - Port: `9090`
 
 > Fix Libraries in Netbeans.
+
 > Choose server Glassfish from inside folder of backend `(dont use your own)`.
+
 > Run Project with Build and Clean and RUN Button after.
 
 ### Frontend Instructions 
