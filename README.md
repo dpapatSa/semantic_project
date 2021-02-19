@@ -40,23 +40,22 @@ npm build
 ---
 
 ## Contact - Developers 
-
-##### Statistics
-
-> 	Dimitra Papatsarouxa (d.papatsaroucha@gmail.com)
+	
 
 ##### Frontend
 
-> 	Nikolaos Astyrakakis
+> 	Nikolaos Astyrakakis (mtp235@edu.hmy.gr)
 
-> 	Stylianos Klados (stelisklados@gmail.com)
+> 	Stylianos Klados (stelisklados@gmail.com & mtp244@edu.hmu.gr)
 
 ##### Backend
 
-> 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com)
+> 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com & mtp238@edu.hmu.gr)
 
->	Tasos Koumarelis ()
+>	Tasos Koumarelis (mtp246@edu.hmu.gr)
 
->	Emmanouhl Kritikakis ()
+>	Emmanouel Kritikakis (mtp251@edu.hmu.gr)
 
->	Kuriakos Kalkanis ()
+>	Kuriakos Kalkanis (mtp252@edu.hmu.gr)
+
+>	Dimitra Papatsarouxa (d.papatsaroucha@gmail.com & mtp259@edu.hmu.gr)
