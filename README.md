@@ -39,14 +39,14 @@ npm build
 
 ## Contact - Developers 
 #### Statistics
-> Dimitra Papatsarouxa
+> Dimitra Papatsarouxa (d.papatsaroucha@gmail.com)
 
 #### Frontend
 > Nikolaos Astyrakakis
-> Stylianos Klados
+> Stylianos Klados (stelisklados@gmail.com)
 
 #### Backend
-Iraklis Skepasianos
-Tasos Koumarelis
-Emmanouhl Kritikakis
-Kuriakos Kalkanis
+> Iraklis Skepasianos (skepasianos.iraklis@gmail.com)
+> Tasos Koumarelis ()
+> Emmanouhl Kritikakis ()
+> Kuriakos Kalkanis ()
