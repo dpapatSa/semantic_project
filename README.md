@@ -58,4 +58,4 @@ npm build
 
 >	Kuriakos Kalkanis (mtp252@edu.hmu.gr)
 
->	Dimitra Papatsarouxa (d.papatsaroucha@gmail.com & mtp259@edu.hmu.gr)
+>	Dimitra Papatsaroucha (d.papatsaroucha@gmail.com & mtp259@edu.hmu.gr)
