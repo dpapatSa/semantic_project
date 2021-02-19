@@ -1,4 +1,4 @@
-# Semantic_project 2020-2021
+# Semantic Project 2020-2021
 
 ### Backend Instructions
 
@@ -33,3 +33,20 @@ npm build
 ```
 > Build files are in `Dist` folder
 > Copy them to NGINX or APACHE and it should work.
+
+
+
+
+## Contact - Developers 
+#### Statistics
+> Dimitra Papatsarouxa
+
+#### Frontend
+> Nikolaos Astyrakakis
+> Stylianos Klados
+
+#### Backend
+Iraklis Skepasianos
+Tasos Koumarelis
+Emmanouhl Kritikakis
+Kuriakos Kalkanis
