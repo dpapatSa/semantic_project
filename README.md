@@ -52,10 +52,10 @@ npm build
 
 > 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com & mtp238@edu.hmu.gr)
 
->	Tasos Koumarelis (mtp246@edu.hmu.gr)
+>	Tasos Koumarelis (akoumarelis@gmail.com & mtp246@edu.hmu.gr)
 
->	Emmanouel Kritikakis (mtp251@edu.hmu.gr)
+>	Emmanouel Kritikakis (kritikakisEmmanuel@gmail.com & mtp251@edu.hmu.gr)
 
->	Kuriakos Kalkanis (mtp252@edu.hmu.gr)
+>	Kuriakos Kalkanis (kiriakoskalkanis96@gmail.com & mtp252@edu.hmu.gr)
 
 >	Dimitra Papatsaroucha (d.papatsaroucha@gmail.com & mtp259@edu.hmu.gr)
