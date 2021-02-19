@@ -17,7 +17,7 @@
 > Choose server Glassfish from inside folder of backend `(dont use your own)`.
 
 > Run Project with Build and Clean and RUN Button after.
-
+---
 ### Frontend Instructions 
 
 > Installing Required Packages
@@ -37,7 +37,7 @@ npm build
 > Copy them to NGINX or APACHE and it should work.
 
 
-
+---
 
 ## Contact - Developers 
 
