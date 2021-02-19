@@ -46,11 +46,15 @@ npm build
 ##### Frontend
 
 > 	Nikolaos Astyrakakis
+
 > 	Stylianos Klados (stelisklados@gmail.com)
 
 ##### Backend
 
 > 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com)
+
 >	Tasos Koumarelis ()
+
 >	Emmanouhl Kritikakis ()
+
 >	Kuriakos Kalkanis ()
