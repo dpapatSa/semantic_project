@@ -44,7 +44,7 @@ npm build
 
 ##### Frontend
 
-> 	Nikolaos Astyrakakis (mtp235@edu.hmy.gr)
+> 	Nikolaos Astyrakakis (mtp235@edu.hmu.gr)
 
 > 	Stylianos Klados (stelisklados@gmail.com & mtp244@edu.hmu.gr)
 
