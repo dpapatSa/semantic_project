@@ -32,3 +32,4 @@ npm run serve
 npm build
 ```
 > Build files are in `Dist` folder
+> Copy them to NGINX or APACHE and it should work.
