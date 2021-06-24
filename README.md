@@ -29,11 +29,11 @@ npm install
 npm run serve
 ```
 
-> Build
+> Build (optional)
 ```
 npm build
 ```
-> Build files are in `Dist` folder
+> Build files are in `Dist` folder, these are required only for production.
 > Copy them to NGINX or APACHE and it should work.
 
 
