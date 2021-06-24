@@ -20,16 +20,16 @@
 ---
 ### Frontend Instructions 
 
-> Installing Required Packages
+> Installing Required Packages	(In folder "frontend")
 ```
 npm install
 ```
-> Run
+> Run		(In folder "frontend")
 ```
 npm run serve
 ```
 
-> Build (optional)
+> Build (optional) (Ready build in folder: "frontend_for_serving")
 ```
 npm build
 ```
