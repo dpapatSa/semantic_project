@@ -3,20 +3,23 @@
 ### Backend Instructions
 
 ##### Backend Specifications 
-> Specifically for Netbeans 8.2 RC
-
+> Requirements 
+- `Netbeans 8.2 RC`
 - `JDK 1.8`
 - `Glassifish Server 4.1.1`
-- Libraries :
+
+> Libraries :
 	- `java-json.jar`
 	- `javax.ws.rs-api-2.0.1.jar`
-- Port: `9090`
 
-> Fix Libraries in Netbeans.
+> Port: `9090`
 
-> Choose server Glassfish from inside folder of backend `(dont use your own)`.
+> Instructions:
+ -  Fix Libraries in Netbeans.
 
-> Run Project with Build and Clean and RUN Button after.
+ - Choose server Glassfish from inside folder of backend `(dont use your own)`.
+
+ - Run Project with Build and Clean and RUN Button after.
 ---
 ### Frontend Instructions 
 
