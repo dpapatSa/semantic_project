@@ -214,26 +214,26 @@ export default {
     this.show = false;
     axios
       .get(
-        "http://localhost:9090/Project_Final/webresources/musicontology/pitfalls"
+        "http://"+process.env.BACKEND_HOST+":"+process.env.BACKEND_PORT+"/Project_Final/webresources/musicontology/pitfalls"
       )
       .then((result) => {
         musicontology_data.push(result.data.MissingAnnotations);
         musicontology_data.push(result.data.UnconnectedOntology);
         axios
-          .get("http://localhost:9090/Project_Final/webresources/foaf/pitfalls")
+          .get("http://"+process.env.BACKEND_HOST+":"+process.env.BACKEND_PORT+"/Project_Final/webresources/foaf/pitfalls")
           .then((result) => {
             foaf_data.push(result.data.MissingAnnotations);
             foaf_data.push(result.data.UnconnectedOntology);
             axios
               .get(
-                "http://localhost:9090/Project_Final/webresources/cidoc/pitfalls"
+                "http://"+process.env.BACKEND_HOST+":"+process.env.BACKEND_PORT+"/Project_Final/webresources/cidoc/pitfalls"
               )
               .then((result) => {
                 cidoc_data.push(result.data.MissingAnnotations);
                 cidoc_data.push(result.data.UnconnectedOntology);
                 axios
                   .get(
-                    "http://localhost:9090/Project_Final/webresources/dublincore/pitfalls"
+                    "http://"+process.env.BACKEND_HOST+":"+process.env.BACKEND_PORT+"/Project_Final/webresources/dublincore/pitfalls"
                   )
                   .then((result) => {
                     dublincore_data.push(result.data.MissingAnnotations);
@@ -241,7 +241,7 @@ export default {
 
                     axios
                       .get(
-                        "http://localhost:9090/Project_Final/webresources/pizza/pitfalls"
+                        "http://"+process.env.BACKEND_HOST+":"+process.env.BACKEND_PORT+"/Project_Final/webresources/pizza/pitfalls"
                       )
                       .then((result) => {
                         pizza_data.push(result.data.MissingAnnotations);
