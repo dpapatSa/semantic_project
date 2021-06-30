@@ -38,8 +38,8 @@ $ npm install
 ```
 > Run		(In folder "frontend")
 ```
-$ export BACKEND_PORT=9090			  (Shall be same as backend listening port... Default: 9090)
-$ export BACKEND_HOST="83.212.77.24"  (Shall be same as machine backend deployed... Default: localhost)
+$ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as backend listening port... Default: 9090)
+$ export VUE_APP_BACKEND_HOST=83.212.77.24       (Shall be same as machine backend deployed... Default: localhost)
 
 $ npm run serve
 ```
