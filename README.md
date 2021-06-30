@@ -15,9 +15,14 @@
 > Port: `9090`
 
 > Instructions:
+
  -  Fix Libraries in Netbeans.
 
  - Choose server Glassfish from inside folder of backend `(dont use your own)`.
+
+ - Change "http://139.91.210.25:8890/sparql?default-graph-uri"  in   "backend\src\java\Model\Ontology.java" to match semantic web ontology SPARQL API...
+
+ - Change "this.setDefaultGraph("http://83.212.77.24:8890/" + x);" in   "backend\src\java\Model\Ontology.java"  to match local backend IP or "localhost"
 
  - Run Project with Build and Clean and RUN Button after.
 ---
@@ -33,6 +38,9 @@ $ npm install
 ```
 > Run		(In folder "frontend")
 ```
+$ export BACKEND_PORT=9090			  (Shall be same as backend listening port... Default: 9090)
+$ export BACKEND_HOST="83.212.77.24"  (Shall be same as machine backend deployed... Default: localhost)
+
 $ npm run serve
 ```
 

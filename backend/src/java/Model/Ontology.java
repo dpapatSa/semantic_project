@@ -25,7 +25,7 @@ public class Ontology {
     public String str;
 
     public Ontology(String x) {
-        this.setDefaultGraph("http://localhost:8890/" + x);
+        this.setDefaultGraph("http://83.212.77.24:8890/" + x);
     }
 
     public void setConnection() throws IOException {
