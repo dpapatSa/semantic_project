@@ -25,16 +25,20 @@
 
 > Installing Required Packages	(In folder "frontend")
 ```
-npm install
+$ curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+$ sudo apt-get install -y nodejs
+
+$ npm install
 ```
 > Run		(In folder "frontend")
 ```
-npm run serve
+$ npm run serve
 ```
 
-> Build (optional) (Ready build in folder: "frontend_for_serving")
+> Build (Optional) (Ready build in folder: "frontend_for_serving")
 ```
-npm build
+$ npm build
 ```
 > Build files are in `Dist` folder, these are required only for production.
 > Copy them to NGINX or APACHE and it should work.
