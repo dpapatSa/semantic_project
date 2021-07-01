@@ -36,8 +36,27 @@
 
  - Change Tomcat Port (nano /var/lib/tomcat8/conf/server.xml) --> Edit ( Connector port="8080" ) to (Connector port="9090")
 
- - Copy "semantic_project/backend/dist/Project_Final.war" to "/var/lib/tomcat8/webapps/"
+ - Copy "semantic_project/backend/dist/Project_Final.war" to "/var/lib/tomcat8/webapps/" 
+ 
+ - Set CORS enabled... 
+    - sudo nano /var/lib/tomcat8/conf/web.xml	
+    - Go To Line " <!-- ================== Built In Filter Definitions ===================== --> "
+    - Enter this filter under " <!-- ================== Built In Filter Definitions ===================== --> "
+    ```
+	<filter>
+	<filter-name>CorsFilter</filter-name>
+	<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+		<init-param>
+			<param-name>cors.allowed.origins</param-name>
+			<param-value>*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
+    ```
  - Restart Tomcat8 service ===> sudo systemctl restart tomcat8.service
 
  - Test that something appears on  http://BACKEND_IP:9090/Project_Final/index.htm
@@ -66,15 +85,22 @@ $ npm run serve
 ---
 > Build (Optional) (Ready build in folder: "frontend_for_serving")
 ```
-$ npm build
+$ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as BACKEND listening port... e.g: 9090)
+$ export VUE_APP_BACKEND_HOST=83.212.77.24       	     (Shall be same as BACKEND host IP deployed... e.g: localhost)
+$ npm run build
 ```
 > Build files are in `Dist` folder, these are required only for production.
 > Copy them to NGINX or APACHE and it should work.
 
 ---
-> Deploy on NGINX (Optional)
+
+> Deploy on a server with NGINX (Optional)
 ```
-$ npm build
+$ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as BACKEND listening port... e.g: 9090)
+$ export VUE_APP_BACKEND_HOST=83.212.77.24       	     (Shall be same as BACKEND host IP deployed... e.g: localhost)
+$ npm run build
+$ sudo apt install nginx
+$ sudo cp -r semantic_project/frontend/dist/* /var/www/html/
 ```
 ---
 
