@@ -22,9 +22,9 @@
 
  - Choose server Glassfish from inside folder of backend `(dont use your own)`.
 
- - Change "http://83.212.77.24:8890/sparql?default-graph-uri"  in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
+ - Change "http://localhost:8890/sparql?default-graph-uri"  in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
 
- - Change "this.setDefaultGraph("http://83.212.77.24:8890/" + x);" in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
+ - Change "this.setDefaultGraph("http://localhost:8890/" + x);" in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
 
  - Run Project with Build and Clean and RUN Button after.
 
