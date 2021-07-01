@@ -83,7 +83,7 @@ $ export VUE_APP_BACKEND_HOST=83.212.77.24       	     (Shall be same as BACKEND
 $ npm run serve
 ```
 ---
-> Build (Optional) (Ready build in folder: "frontend_for_serving")
+> Build (Optional) (This makes a dist folder with "compiled" files for serving with nginx or apache)
 ```
 $ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as BACKEND listening port... e.g: 9090)
 $ export VUE_APP_BACKEND_HOST=83.212.77.24       	     (Shall be same as BACKEND host IP deployed... e.g: localhost)
