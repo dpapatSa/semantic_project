@@ -31,6 +31,7 @@
 ---
 
 > Instructions to run on Server:
+ - First run with NETBEANS  (this will generate a new Project_Final.war with new urls and parameters set above)
 
  - Install tomcat (sudo apt install tomcat*)
 
