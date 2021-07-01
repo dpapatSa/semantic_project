@@ -40,8 +40,8 @@
  
  - Set CORS enabled... 
     - RUN `sudo nano /var/lib/tomcat8/conf/web.xml`	
-    - GO TO Line " <!-- ================== Built In Filter Definitions ===================== --> "
-    - Enter this Filter under " <!-- ================== Built In Filter Definitions ===================== --> "
+    - GO TO Line " \<!-- ================== Built In Filter Definitions ===================== --> "
+    - Enter this Filter under " \<!-- ================== Built In Filter Definitions ===================== --> "
     ```
 	<filter>
 		<filter-name>CorsFilter</filter-name>
