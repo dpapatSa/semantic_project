@@ -6,6 +6,7 @@
 ---
 > Requirements 
 - `Netbeans 8.2 RC`
+	- `In Netbeans go to Tools > Plugins ... and install Restful  -  Rest - Web Plugins`
 - `JDK 1.8`
 - `Glassifish Server 4.1.1`
 ---
@@ -31,36 +32,14 @@
 ---
 
 > Instructions to run on Server:
- - First run with NETBEANS  (this will generate a new Project_Final.war with new urls and parameters set above)
 
- - Install tomcat (`sudo apt install tomcat8`)
+ - Git Clone 
 
- - Change Tomcat Port (`sudo nano /var/lib/tomcat8/conf/server.xml`) --> Edit ( `Connector port="8080"` ) to (`Connector port="9090"`)
-
- - Copy "semantic_project/backend/dist/Project_Final.war"  --> from your `Computer` to `server` --> "/var/lib/tomcat8/webapps/" 
+ - Run: `/home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin start-domain`
  
- - Set `CORS enabled`... 
-    - RUN `sudo nano /var/lib/tomcat8/conf/web.xml`	
-    - GO TO Line " \<!-- ================== Built In Filter Definitions ===================== --> "
-    - Enter this Filter under " \<!-- ================== Built In Filter Definitions ===================== --> "
-    ```
-	<filter>
-		<filter-name>CorsFilter</filter-name>
-		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-		<init-param>
-			<param-name>cors.allowed.origins</param-name>
-			<param-value>*</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>CorsFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+ - Run: `/home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin redeploy /home/user/semantic_project/backend/dist/Project_Final.war`
 
-    ```
- - Restart Tomcat8 service ===> `sudo systemctl restart tomcat8.service`
-
- - Test that something appears on  http://BACKEND_IP:9090/Project_Final/index.htm
+ - Test that something appears on  http://83.212.77.24:9090/Project_Final/webresources/cidoc/metric1
 
 
 ---
