@@ -31,7 +31,7 @@ public class Ontology {
     public void setConnection() throws IOException {
         // Ftiaxnei to aitima pou tha kanoume get ta dedomena
         this.contextType = "application/json";
-        this.urlString = "http://139.91.210.25:8890/sparql?default-graph-uri=" + URLEncoder.encode(getDefaultGraph(), StandardCharsets.UTF_8.toString()) + "&query="
+        this.urlString = "http://83.212.77.24:8890/sparql?default-graph-uri=" + URLEncoder.encode(getDefaultGraph(), StandardCharsets.UTF_8.toString()) + "&query="
                 + URLEncoder.encode(getQuerySpaql(), StandardCharsets.UTF_8.toString()) + "&format=" + URLEncoder.encode(this.contextType, StandardCharsets.UTF_8.toString()) + "&timeout=0&debug=on";
         this.url = new URL(urlString);
         this.c = (HttpURLConnection) url.openConnection();    // connecting to url
