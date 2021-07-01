@@ -35,11 +35,22 @@
 
  - Git Clone 
 
- - Run: `/home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin start-domain`
+ - Run: `sudo /home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin start-domain`
  
- - Run: `/home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin redeploy /home/user/semantic_project/backend/dist/Project_Final.war`
-
+ - Run: `sudo /home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin redeploy /home/user/semantic_project/backend/dist/Project_Final.war`
+	
  - Test that something appears on  http://83.212.77.24:9090/Project_Final/webresources/cidoc/metric1
+
+ - Run: `nano run.sh`
+ - Add Contents:
+   ```
+   !#/bin/sh
+   
+    /home/user/semantic_project/backend/glassfish4/glassfish/bin/asadmin start-domain
+   ```
+    
+
+ - Start it manually after every reboot: `sudo sh run.sh`
 
 
 ---
