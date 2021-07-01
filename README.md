@@ -39,13 +39,13 @@
  - Copy "semantic_project/backend/dist/Project_Final.war" to "/var/lib/tomcat8/webapps/" 
  
  - Set CORS enabled... 
-    - sudo nano /var/lib/tomcat8/conf/web.xml	
-    - Go To Line " <!-- ================== Built In Filter Definitions ===================== --> "
-    - Enter this filter under " <!-- ================== Built In Filter Definitions ===================== --> "
+    - RUN `sudo nano /var/lib/tomcat8/conf/web.xml`	
+    - GO TO Line " <!-- ================== Built In Filter Definitions ===================== --> "
+    - Enter this Filter under " <!-- ================== Built In Filter Definitions ===================== --> "
     ```
 	<filter>
-	<filter-name>CorsFilter</filter-name>
-	<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
 		<init-param>
 			<param-name>cors.allowed.origins</param-name>
 			<param-value>*</param-value>
@@ -57,7 +57,7 @@
 	</filter-mapping>
 
     ```
- - Restart Tomcat8 service ===> sudo systemctl restart tomcat8.service
+ - Restart Tomcat8 service ===> `sudo systemctl restart tomcat8.service`
 
  - Test that something appears on  http://BACKEND_IP:9090/Project_Final/index.htm
 
