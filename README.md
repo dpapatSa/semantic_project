@@ -33,13 +33,13 @@
 > Instructions to run on Server:
  - First run with NETBEANS  (this will generate a new Project_Final.war with new urls and parameters set above)
 
- - Install tomcat (sudo apt install tomcat*)
+ - Install tomcat (`sudo apt install tomcat8`)
 
- - Change Tomcat Port (nano /var/lib/tomcat8/conf/server.xml) --> Edit ( Connector port="8080" ) to (Connector port="9090")
+ - Change Tomcat Port (`sudo nano /var/lib/tomcat8/conf/server.xml`) --> Edit ( `Connector port="8080"` ) to (`Connector port="9090"`)
 
- - Copy "semantic_project/backend/dist/Project_Final.war"  -->  to server --> "/var/lib/tomcat8/webapps/" 
+ - Copy "semantic_project/backend/dist/Project_Final.war"  --> from your `Computer` to `server` --> "/var/lib/tomcat8/webapps/" 
  
- - Set CORS enabled... 
+ - Set `CORS enabled`... 
     - RUN `sudo nano /var/lib/tomcat8/conf/web.xml`	
     - GO TO Line " \<!-- ================== Built In Filter Definitions ===================== --> "
     - Enter this Filter under " \<!-- ================== Built In Filter Definitions ===================== --> "
