@@ -3,31 +3,50 @@
 ### Backend Instructions
 
 ##### Backend Specifications 
+---
 > Requirements 
 - `Netbeans 8.2 RC`
 - `JDK 1.8`
 - `Glassifish Server 4.1.1`
-
+---
 > Libraries :
 	- `java-json.jar`
 	- `javax.ws.rs-api-2.0.1.jar`
-
+---
 > Port: `9090`
 
-> Instructions:
+---
+> Instructions to run with NETBEANS:
 
- -  Fix Libraries in Netbeans.
+ - Fix Libraries in Netbeans.
 
  - Choose server Glassfish from inside folder of backend `(dont use your own)`.
 
- - Change "http://139.91.210.25:8890/sparql?default-graph-uri"  in   "backend\src\java\Model\Ontology.java" to match semantic web ontology SPARQL API...
+ - Change "http://83.212.77.24:8890/sparql?default-graph-uri"  in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
 
- - Change "this.setDefaultGraph("http://83.212.77.24:8890/" + x);" in   "backend\src\java\Model\Ontology.java"  to match local backend IP or "localhost"
+ - Change "this.setDefaultGraph("http://83.212.77.24:8890/" + x);" in   "backend\src\java\Model\Ontology.java"  to match Virtuoso backend IP or "localhost"
 
  - Run Project with Build and Clean and RUN Button after.
----
-### Frontend Instructions 
 
+---
+
+> Instructions to run on Server:
+
+ - Install tomcat (sudo apt install tomcat*)
+
+ - Change Tomcat Port (nano /var/lib/tomcat8/conf/server.xml) --> Edit ( Connector port="8080" ) to (Connector port="9090")
+
+ - Copy "semantic_project/backend/dist/Project_Final.war" to "/var/lib/tomcat8/webapps/"
+
+ - Restart Tomcat8 service ===> sudo systemctl restart tomcat8.service
+
+ - Test that something appears on  http://BACKEND_IP:9090/Project_Final/index.htm
+
+
+---
+
+### Frontend Instructions 
+---
 > Installing Required Packages	(In folder "frontend")
 ```
 $ curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -35,15 +54,16 @@ $ curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 
 $ npm install
+---
 ```
 > Run		(In folder "frontend")
 ```
-$ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as backend listening port... Default: 9090)
-$ export VUE_APP_BACKEND_HOST=83.212.77.24       (Shall be same as machine backend deployed... Default: localhost)
+$ export VUE_APP_BACKEND_PORT=9090			     (Shall be same as BACKEND listening port... e.g: 9090)
+$ export VUE_APP_BACKEND_HOST=83.212.77.24       	     (Shall be same as BACKEND host IP deployed... e.g: localhost)
 
 $ npm run serve
 ```
-
+---
 > Build (Optional) (Ready build in folder: "frontend_for_serving")
 ```
 $ npm build
@@ -51,18 +71,31 @@ $ npm build
 > Build files are in `Dist` folder, these are required only for production.
 > Copy them to NGINX or APACHE and it should work.
 
-
 ---
+> Deploy on NGINX (Optional)
+```
+$ npm build
+```
+---
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+ 
 
 ## Contact - Developers 
 	
-
+---
 ##### Frontend
 
 > 	Nikolaos Astyrakakis (mtp235@edu.hmu.gr)
 
 > 	Stylianos Klados (stelisklados@gmail.com & mtp244@edu.hmu.gr)
 
+---
 ##### Backend
 
 > 	Iraklis Skepasianos (skepasianos.iraklis@gmail.com & mtp238@edu.hmu.gr)
