@@ -37,7 +37,7 @@
 
  - Change Tomcat Port (nano /var/lib/tomcat8/conf/server.xml) --> Edit ( Connector port="8080" ) to (Connector port="9090")
 
- - Copy "semantic_project/backend/dist/Project_Final.war" to "/var/lib/tomcat8/webapps/" 
+ - Copy "semantic_project/backend/dist/Project_Final.war"  -->  to server --> "/var/lib/tomcat8/webapps/" 
  
  - Set CORS enabled... 
     - RUN `sudo nano /var/lib/tomcat8/conf/web.xml`	
