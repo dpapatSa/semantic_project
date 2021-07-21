@@ -1,5 +1,17 @@
 # Semantic Project 2020-2021
 
+# QUICKSTART INSTRUCTIONS
+
+- In run.sh, change the IP and PORT in (see below), accordingly.
+```
+export VUE_APP_BACKEND_PORT=9090    <--- Change the port
+export VUE_APP_BACKEND_HOST=83.212.77.24     <--- Change the IP
+```
+
+- Inside 'backend\src\java\Model\Ontology.java' change the IP:PORT in 'this.urlString' accordingly.
+- DO NOT CHANGE THE 'localhost' entry !!
+- Then run `source run.sh`
+
 ### Backend Instructions
 
 ##### Backend Specifications 
