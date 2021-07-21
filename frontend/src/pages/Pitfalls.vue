@@ -21,14 +21,14 @@
       <div class="col-lg-6">
         <card>
           <template slot="header">
-            <h3 class="card-title">Musicontology</h3>
+            <h3 class="card-title">bfo</h3>
           </template>
           <div class="chart-area">
             <bar-chart
               style="height: 100%"
               chart-id="purple-bar-chart"
               :extra-options="barChart.extraOptions"
-              :chart-data="barChart.musicontology_data_chart"
+              :chart-data="barChart.bfo_data_chart"
             >
             </bar-chart>
           </div>
@@ -79,12 +79,12 @@
       <div class="col-lg-6">
         <card>
           <template slot="header">
-            <h3 class="card-title">Pizza</h3>
+            <h3 class="card-title">obi</h3>
           </template>
           <div class="chart-area">
             <bar-chart
               chart-id="purple-bar-chart"
-              :chart-data="barChart.pizza_data_chart"
+              :chart-data="barChart.obi_data_chart"
             >
             </bar-chart>
           </div>
@@ -105,11 +105,11 @@ import * as chartConfigs from "@/components/Charts/config";
 import config from "@/config";
 import axios from "axios";
 
-let musicontology_data = [];
+let bfo_data = [];
 let foaf_data = [];
 let cidoc_data = [];
 let dublincore_data = [];
-let pizza_data = [];
+let obi_data = [];
 
 export default {
   components: {
@@ -122,18 +122,18 @@ export default {
       show: false,
       barChart: {
         type: "pie",
-        musicontology_data_chart: {
+        bfo_data_chart: {
           extraOptions: chartConfigs.barChartOptions,
           labels: ["MissingAnnotations", "UnconnectedOntology"],
           datasets: [
             {
-              label: "Musicontology",
+              label: "bfo",
               fill: true,
               borderColor: config.colors.danger,
               borderWidth: 2,
               borderDash: [],
               borderDashOffset: 0.0,
-              data: musicontology_data,
+              data: bfo_data,
             },
           ],
           gradientColors: config.colors.primaryGradient,
@@ -190,18 +190,18 @@ export default {
           gradientColors: config.colors.primaryGradient,
           gradientStops: [1, 0.4, 0],
         },
-        pizza_data_chart: {
+        obi_data_chart: {
           extraOptions: chartConfigs.barChartOptions,
           labels: ["MissingAnnotations", "UnconnectedOntology"],
           datasets: [
             {
-              label: "Pizza",
+              label: "obi",
               fill: true,
               borderColor: config.colors.danger,
               borderWidth: 2,
               borderDash: [],
               borderDashOffset: 0.0,
-              data: pizza_data,
+              data: obi_data,
             },
           ],
           gradientColors: config.colors.primaryGradient,
@@ -214,11 +214,11 @@ export default {
     this.show = false;
     axios
       .get(
-        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/musicontology/pitfalls"
+        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/bfo/pitfalls"
       )
       .then((result) => {
-        musicontology_data.push(result.data.MissingAnnotations);
-        musicontology_data.push(result.data.UnconnectedOntology);
+        bfo_data.push(result.data.MissingAnnotations);
+        bfo_data.push(result.data.UnconnectedOntology);
         axios
           .get("http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/foaf/pitfalls")
           .then((result) => {
@@ -241,11 +241,11 @@ export default {
 
                     axios
                       .get(
-                        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/pizza/pitfalls"
+                        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/obi/pitfalls"
                       )
                       .then((result) => {
-                        pizza_data.push(result.data.MissingAnnotations);
-                        pizza_data.push(result.data.UnconnectedOntology);
+                        obi_data.push(result.data.MissingAnnotations);
+                        obi_data.push(result.data.UnconnectedOntology);
                         this.show = true;
                       });
                   });

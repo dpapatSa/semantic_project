@@ -57,7 +57,7 @@ export default {
       metricChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number of Classes",
@@ -81,7 +81,7 @@ export default {
     },
   },
   created() {
-    var label = ["musicontology", "foaf", "dublincore", "cidoc", "pizza"];
+    var label = ["bfo", "foaf", "dublincore", "cidoc", "obi"];
 
     var promises = [];
 

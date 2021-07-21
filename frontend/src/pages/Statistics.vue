@@ -146,7 +146,7 @@ export default {
       noObjPropertiesChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number of Object Properties",
@@ -165,7 +165,7 @@ export default {
       noDTPropertiesChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number of DT Properties",
@@ -184,7 +184,7 @@ export default {
       noOfAxiomsChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number Of Axioms",
@@ -214,7 +214,7 @@ export default {
       noOfIndividualsChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number of Individuals",
@@ -233,7 +233,7 @@ export default {
       noOfClassesChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ["musicontology", "foaf", "dublincore", "cidoc", "pizza"],
+          labels: ["bfo", "foaf", "dublincore", "cidoc", "obi"],
           datasets: [
             {
               label: "Number of Classes",
@@ -257,7 +257,7 @@ export default {
     },
   },
   created() {
-    var label = ["musicontology", "foaf", "dublincore", "cidoc", "pizza"];
+    var label = ["bfo", "foaf", "dublincore", "cidoc", "obi"];
 
     var promises = [];
 

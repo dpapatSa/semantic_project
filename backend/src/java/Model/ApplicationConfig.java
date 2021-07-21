@@ -29,14 +29,14 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(Bfo.MusicontologyPitfalls.class);
-        resources.add(Bfo.MusicontologyStats.class);
-        resources.add(Bfo.Musicontology_1.class);
-        resources.add(Bfo.Musicontology_2.class);
-        resources.add(Bfo.Musicontology_3.class);
-        resources.add(Bfo.Musicontology_4.class);
-        resources.add(Bfo.Musicontology_5.class);
-        resources.add(Bfo.Musicontology_6.class);
+        resources.add(Bfo.BfoPitfalls.class);
+        resources.add(Bfo.BfoStats.class);
+        resources.add(Bfo.bfo_1.class);
+        resources.add(Bfo.bfo_2.class);
+        resources.add(Bfo.bfo_3.class);
+        resources.add(Bfo.bfo_4.class);
+        resources.add(Bfo.bfo_5.class);
+        resources.add(Bfo.bfo_6.class);
         resources.add(Cidoc.CidocPitfalls.class);
         resources.add(Cidoc.CidocStats.class);
         resources.add(Cidoc.Cidoc_1.class);
@@ -62,14 +62,14 @@ public class ApplicationConfig extends Application {
         resources.add(Foaf.Foaf_5.class);
         resources.add(Foaf.Foaf_6.class);
         resources.add(Model.CORSResponseFilter.class);
-        resources.add(Obi.PizzaPitfalls.class);
-        resources.add(Obi.PizzaStats.class);
-        resources.add(Obi.Pizza_1.class);
-        resources.add(Obi.Pizza_2.class);
-        resources.add(Obi.Pizza_3.class);
-        resources.add(Obi.Pizza_4.class);
-        resources.add(Obi.Pizza_5.class);
-        resources.add(Obi.Pizza_6.class);
+        resources.add(Obi.obiPitfalls.class);
+        resources.add(Obi.obiStats.class);
+        resources.add(Obi.obi_1.class);
+        resources.add(Obi.obi_2.class);
+        resources.add(Obi.obi_3.class);
+        resources.add(Obi.obi_4.class);
+        resources.add(Obi.obi_5.class);
+        resources.add(Obi.obi_6.class);
     }
     
 }
