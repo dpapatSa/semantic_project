@@ -29,6 +29,14 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(Bfo.MusicontologyPitfalls.class);
+        resources.add(Bfo.MusicontologyStats.class);
+        resources.add(Bfo.Musicontology_1.class);
+        resources.add(Bfo.Musicontology_2.class);
+        resources.add(Bfo.Musicontology_3.class);
+        resources.add(Bfo.Musicontology_4.class);
+        resources.add(Bfo.Musicontology_5.class);
+        resources.add(Bfo.Musicontology_6.class);
         resources.add(Cidoc.CidocPitfalls.class);
         resources.add(Cidoc.CidocStats.class);
         resources.add(Cidoc.Cidoc_1.class);
@@ -54,22 +62,14 @@ public class ApplicationConfig extends Application {
         resources.add(Foaf.Foaf_5.class);
         resources.add(Foaf.Foaf_6.class);
         resources.add(Model.CORSResponseFilter.class);
-        resources.add(Musicontology.MusicontologyPitfalls.class);
-        resources.add(Musicontology.MusicontologyStats.class);
-        resources.add(Musicontology.Musicontology_1.class);
-        resources.add(Musicontology.Musicontology_2.class);
-        resources.add(Musicontology.Musicontology_3.class);
-        resources.add(Musicontology.Musicontology_4.class);
-        resources.add(Musicontology.Musicontology_5.class);
-        resources.add(Musicontology.Musicontology_6.class);
-        resources.add(Pizza.PizzaPitfalls.class);
-        resources.add(Pizza.PizzaStats.class);
-        resources.add(Pizza.Pizza_1.class);
-        resources.add(Pizza.Pizza_2.class);
-        resources.add(Pizza.Pizza_3.class);
-        resources.add(Pizza.Pizza_4.class);
-        resources.add(Pizza.Pizza_5.class);
-        resources.add(Pizza.Pizza_6.class);
+        resources.add(Obi.PizzaPitfalls.class);
+        resources.add(Obi.PizzaStats.class);
+        resources.add(Obi.Pizza_1.class);
+        resources.add(Obi.Pizza_2.class);
+        resources.add(Obi.Pizza_3.class);
+        resources.add(Obi.Pizza_4.class);
+        resources.add(Obi.Pizza_5.class);
+        resources.add(Obi.Pizza_6.class);
     }
     
 }
