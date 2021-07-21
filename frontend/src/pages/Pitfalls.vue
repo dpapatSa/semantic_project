@@ -21,7 +21,7 @@
       <div class="col-lg-6">
         <card>
           <template slot="header">
-            <h3 class="card-title">bfo</h3>
+            <h3 class="card-title">BFO</h3>
           </template>
           <div class="chart-area">
             <bar-chart
@@ -79,7 +79,7 @@
       <div class="col-lg-6">
         <card>
           <template slot="header">
-            <h3 class="card-title">obi</h3>
+            <h3 class="card-title">OBI</h3>
           </template>
           <div class="chart-area">
             <bar-chart
@@ -127,7 +127,7 @@ export default {
           labels: ["MissingAnnotations", "UnconnectedOntology"],
           datasets: [
             {
-              label: "bfo",
+              label: "BFO",
               fill: true,
               borderColor: config.colors.danger,
               borderWidth: 2,
