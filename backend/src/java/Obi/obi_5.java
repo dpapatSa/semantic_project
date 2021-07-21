@@ -16,11 +16,11 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("pizza/metric5")
-public class Pizza_5{ // Average population P: P = Number of individuals / Classes
+@Path("obi/metric5")
+public class obi_5{ // Average population P: P = Number of individuals / Classes
 
     @Context
-    private Ontology pizza;
+    private Ontology obi;
     private JSONObject individualObject, countClasses;
     private JSONArray arr;
     private String size, value;
@@ -31,14 +31,14 @@ public class Pizza_5{ // Average population P: P = Number of individuals / Class
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
-        pizza = new Ontology("foaf");  // Ontology object type pizza       
+        obi = new Ontology("foaf");  // Ontology object type obi       
 
         // Count the number of classes
-        pizza.setQuerySpaql(stats.getStat1()); //Sparql query
-        pizza.setConnection(); //Get the data and write them in String with json format
+        obi.setQuerySpaql(stats.getStat1()); //Sparql query
+        obi.setConnection(); //Get the data and write them in String with json format
 
         // Parse in the string cidoc.getResponsestring() type JSON 
-        countClasses = new JSONObject(pizza.getResponsestring());
+        countClasses = new JSONObject(obi.getResponsestring());
         arr = countClasses.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
@@ -46,11 +46,11 @@ public class Pizza_5{ // Average population P: P = Number of individuals / Class
         doubleValue = Double.parseDouble(value); //Number of classes
 
          //Count the number of individuals
-        pizza.setQuerySpaql(stats.getStat4()); //Sparql query
-        pizza.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
+        obi.setQuerySpaql(stats.getStat4()); //Sparql query
+        obi.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
 
         // Parse in the string cidoc.getResponsestring() type JSON 
-        individualObject = new JSONObject(pizza.getResponsestring());
+        individualObject = new JSONObject(obi.getResponsestring());
         arr = individualObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countIndividual").getString("value");

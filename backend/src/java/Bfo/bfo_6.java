@@ -15,26 +15,26 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("musicontology/metric6")
-public class Musicontology_6 { //Equivalence Ratio (ER): ER = SameClasses / Number of All Classes 
+@Path("bfo/metric6")
+public class bfo_6 { //Equivalence Ratio (ER): ER = SameClasses / Number of All Classes 
     private String value, crrString;
     private int intValue1 = 0, intValue2 = 0;
     private JSONObject countClassesObject, countSameObject;
     private JSONArray arr;
-    private Ontology musicontology;
+    private Ontology bfo;
     private Statistics stats = new Statistics();
     private double crr=0;
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getJson() throws IOException, JSONException {
-        musicontology = new Ontology("musicontology"); // Ontology object type cidoc
+        bfo = new Ontology("bfo"); // Ontology object type cidoc
 
         // Count the number of classes
-        musicontology.setQuerySpaql(stats.getStat1()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String musicontology.getResponsestring() with json format
+        bfo.setQuerySpaql(stats.getStat1()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String bfo.getResponsestring() with json format
 
-        // Parse in the string musicontology.getResponsestring() type JSON 
-        countClassesObject = new JSONObject(musicontology.getResponsestring());
+        // Parse in the string bfo.getResponsestring() type JSON 
+        countClassesObject = new JSONObject(bfo.getResponsestring());
         arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
@@ -42,11 +42,11 @@ public class Musicontology_6 { //Equivalence Ratio (ER): ER = SameClasses / Numb
         intValue1 = Integer.parseInt(value); // Add the value from query in the variable intValue
         
         // Count the number of same classes
-        musicontology.setQuerySpaql(stats.getStat7()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String musicontology.getResponsestring() with json format
+        bfo.setQuerySpaql(stats.getStat7()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String bfo.getResponsestring() with json format
 
-        // Parse in the string musicontology.getResponsestring() type JSON 
-        countSameObject = new JSONObject(musicontology.getResponsestring());
+        // Parse in the string bfo.getResponsestring() type JSON 
+        countSameObject = new JSONObject(bfo.getResponsestring());
         arr = countSameObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countSameClass").getString("value");

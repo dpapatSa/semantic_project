@@ -16,11 +16,11 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("musicontology/metric3")
-public class Musicontology_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
+@Path("bfo/metric3")
+public class bfo_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
 
     @Context
-    private Ontology musicontology;
+    private Ontology bfo;
     private JSONObject countAttributes;
     private JSONArray arr;
     private String value;
@@ -30,13 +30,13 @@ private Statistics stats = new Statistics();
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
-        musicontology = new Ontology("musicontology");  // Ontology object type musicontology       
+        bfo = new Ontology("bfo");  // Ontology object type bfo       
 
-        musicontology.setQuerySpaql(stats.getStat5()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String with json format
+        bfo.setQuerySpaql(stats.getStat5()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String with json format
 
-        // Parse in the string musicontology.getResponsestring() type JSON 
-        countAttributes = new JSONObject(musicontology.getResponsestring());
+        // Parse in the string bfo.getResponsestring() type JSON 
+        countAttributes = new JSONObject(bfo.getResponsestring());
         arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");

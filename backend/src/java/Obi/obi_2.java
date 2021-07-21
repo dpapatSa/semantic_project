@@ -16,11 +16,11 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("pizza/metric2")
-public class Pizza_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
+@Path("obi/metric2")
+public class obi_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
-    private Ontology pizza;
+    private Ontology obi;
     private Double attributeRich;
     private JSONObject countAttributes, countClasses;
     private JSONArray arr;
@@ -32,13 +32,13 @@ public class Pizza_2 { // Attribute richness AR(M) = Number of attributes of all
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
-        pizza = new Ontology("pizza");  // Ontology object type pizza       
+        obi = new Ontology("obi");  // Ontology object type obi       
 
-        pizza.setQuerySpaql(stats.getStat5()); //Sparql query      
-        pizza.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
+        obi.setQuerySpaql(stats.getStat5()); //Sparql query      
+        obi.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
 
-        // Parse in the string pizza.getResponsestring() type JSON 
-        countAttributes = new JSONObject(pizza.getResponsestring());
+        // Parse in the string obi.getResponsestring() type JSON 
+        countAttributes = new JSONObject(obi.getResponsestring());
         arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");
@@ -46,11 +46,11 @@ public class Pizza_2 { // Attribute richness AR(M) = Number of attributes of all
         intValue1 = Double.parseDouble(value); //Number of axioms
 
         // Count the number of classes
-        pizza.setQuerySpaql(stats.getStat1()); //Sparql query      
-        pizza.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
+        obi.setQuerySpaql(stats.getStat1()); //Sparql query      
+        obi.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
 
-        // Parse in the string pizza.getResponsestring() type JSON 
-        countClasses = new JSONObject(pizza.getResponsestring());
+        // Parse in the string obi.getResponsestring() type JSON 
+        countClasses = new JSONObject(obi.getResponsestring());
         arr = countClasses.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");

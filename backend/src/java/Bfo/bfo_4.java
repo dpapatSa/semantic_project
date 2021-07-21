@@ -15,26 +15,26 @@ import org.json.JSONObject;
  *
  * @author kirkk
  */
-@Path("musicontology/metric4")
-public class Musicontology_4 { // Class/Relation Ratio (CRR): Classes / Relationships
+@Path("bfo/metric4")
+public class bfo_4 { // Class/Relation Ratio (CRR): Classes / Relationships
     private String value, crrString;
     private int intValue = 0,intValue2=0;
     private JSONObject countClassesObject,countTripleObject;
     private JSONArray arr;
-    private Ontology musicontology;
+    private Ontology bfo;
     private Statistics stats = new Statistics();
     private double crr=0;
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getJson() throws IOException, JSONException {
-        musicontology = new Ontology("musicontology"); // Ontology object type cidoc
+        bfo = new Ontology("bfo"); // Ontology object type cidoc
 
         // Count the number of classes
-        musicontology.setQuerySpaql(stats.getStat1()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
+        bfo.setQuerySpaql(stats.getStat1()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
 
         // Parse in the string cidoc.getResponsestring() type JSON 
-        countClassesObject = new JSONObject(musicontology.getResponsestring());
+        countClassesObject = new JSONObject(bfo.getResponsestring());
         arr = countClassesObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
@@ -42,11 +42,11 @@ public class Musicontology_4 { // Class/Relation Ratio (CRR): Classes / Relation
         intValue = Integer.parseInt(value); // Add the value from query in the variable intValue
         
         // Count the number of objectPropertys
-        musicontology.setQuerySpaql(stats.getStat6()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
+        bfo.setQuerySpaql(stats.getStat6()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String cidoc.getResponsestring() with json format
 
         // Parse in the string cidoc.getResponsestring() type JSON 
-        countTripleObject = new JSONObject(musicontology.getResponsestring());
+        countTripleObject = new JSONObject(bfo.getResponsestring());
         arr = countTripleObject.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countTriples").getString("value");

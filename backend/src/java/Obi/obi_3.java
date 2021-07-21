@@ -16,11 +16,11 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("pizza/metric3")
-public class Pizza_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
+@Path("obi/metric3")
+public class obi_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number of axioms* p/250)
 
     @Context
-    private Ontology pizza;
+    private Ontology obi;
     private JSONObject countAttributes;
     private JSONArray arr;
     private String value;
@@ -31,13 +31,13 @@ public class Pizza_3 { // Appropriateness of module size: 1/2 - 1/2 *cos(number 
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
-        pizza = new Ontology("pizza");  // Ontology object type pizza       
+        obi = new Ontology("obi");  // Ontology object type obi       
 
-        pizza.setQuerySpaql(stats.getStat5()); //Sparql query      
-        pizza.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
+        obi.setQuerySpaql(stats.getStat5()); //Sparql query      
+        obi.setConnection(); //Get the data and write them in String foaf.getResponsestring() with json format
 
-        // Parse in the string pizza.getResponsestring() type JSON 
-        countAttributes = new JSONObject(pizza.getResponsestring());
+        // Parse in the string obi.getResponsestring() type JSON 
+        countAttributes = new JSONObject(obi.getResponsestring());
         arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");

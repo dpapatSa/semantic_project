@@ -16,11 +16,11 @@ import org.json.JSONObject;
  *
  * @author Tasos
  */
-@Path("musicontology/metric2")
-public class Musicontology_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
+@Path("bfo/metric2")
+public class bfo_2 { // Attribute richness AR(M) = Number of attributes of all entities / Number of classes
 
     @Context
-    private Ontology musicontology;
+    private Ontology bfo;
     private Double attributeRich;
     private JSONObject countAttributes, countClasses;
     private JSONArray arr;
@@ -32,13 +32,13 @@ public class Musicontology_2 { // Attribute richness AR(M) = Number of attribute
     @Produces(MediaType.APPLICATION_JSON)
 
     public String getJson() throws IOException, JSONException {
-        musicontology = new Ontology("musicontology");  // Ontology object type musicontology       
+        bfo = new Ontology("bfo");  // Ontology object type bfo       
 
-        musicontology.setQuerySpaql(stats.getStat5()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String with json format
+        bfo.setQuerySpaql(stats.getStat5()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String with json format
 
-        // Parse in the string musicontology.getResponsestring() type JSON 
-        countAttributes = new JSONObject(musicontology.getResponsestring());
+        // Parse in the string bfo.getResponsestring() type JSON 
+        countAttributes = new JSONObject(bfo.getResponsestring());
         arr = countAttributes.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countAxioms").getString("value");
@@ -46,11 +46,11 @@ public class Musicontology_2 { // Attribute richness AR(M) = Number of attribute
         intValue1 = Double.parseDouble(value); //Number of axioms
 
         // Count the number of classes
-        musicontology.setQuerySpaql(stats.getStat1()); //Sparql query
-        musicontology.setConnection(); //Get the data and write them in String with json format
+        bfo.setQuerySpaql(stats.getStat1()); //Sparql query
+        bfo.setConnection(); //Get the data and write them in String with json format
 
-        // Parse in the string musicontology.getResponsestring() type JSON 
-        countClasses = new JSONObject(musicontology.getResponsestring());
+        // Parse in the string bfo.getResponsestring() type JSON 
+        countClasses = new JSONObject(bfo.getResponsestring());
         arr = countClasses.getJSONObject("results").getJSONArray("bindings");
         for (int i = 0; i < arr.length(); i++) {
             value = arr.getJSONObject(i).getJSONObject("countClass").getString("value");
