@@ -195,7 +195,7 @@ export default {
           labels: ["MissingAnnotations", "UnconnectedOntology"],
           datasets: [
             {
-              label: "obi",
+              label: "OBI",
               fill: true,
               borderColor: config.colors.danger,
               borderWidth: 2,
@@ -214,26 +214,26 @@ export default {
     this.show = false;
     axios
       .get(
-        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/bfo/pitfalls"
+        "http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/bfo/pitfalls"
       )
       .then((result) => {
         bfo_data.push(result.data.MissingAnnotations);
         bfo_data.push(result.data.UnconnectedOntology);
         axios
-          .get("http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/foaf/pitfalls")
+          .get("http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/foaf/pitfalls")
           .then((result) => {
             foaf_data.push(result.data.MissingAnnotations);
             foaf_data.push(result.data.UnconnectedOntology);
             axios
               .get(
-                "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/cidoc/pitfalls"
+                "http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/cidoc/pitfalls"
               )
               .then((result) => {
                 cidoc_data.push(result.data.MissingAnnotations);
                 cidoc_data.push(result.data.UnconnectedOntology);
                 axios
                   .get(
-                    "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/dublincore/pitfalls"
+                    "http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/dublincore/pitfalls"
                   )
                   .then((result) => {
                     dublincore_data.push(result.data.MissingAnnotations);
@@ -241,7 +241,7 @@ export default {
 
                     axios
                       .get(
-                        "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/obi/pitfalls"
+                        "http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/obi/pitfalls"
                       )
                       .then((result) => {
                         obi_data.push(result.data.MissingAnnotations);

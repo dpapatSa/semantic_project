@@ -88,7 +88,7 @@ export default {
     for (var i = 0; i < 5; i++) {
       promises.push(
         axios.get(
-          "http://"+process.env.VUE_APP_BACKEND_HOST+":"+process.env.VUE_APP_BACKEND_PORT+"/Project_Final/webresources/" +
+          "http://"+(process.env.VUE_APP_BACKEND_HOST || "localhost" )+":"+(process.env.VUE_APP_BACKEND_PORT || "9090" )+"/Project_Final/webresources/" +
             label[i] +
             "/metric4"
         )
