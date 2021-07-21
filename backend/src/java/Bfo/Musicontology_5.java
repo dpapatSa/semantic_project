@@ -1,4 +1,4 @@
-package Musicontology;
+package Bfo;
 
 import Model.Ontology;
 import Model.Statistics;

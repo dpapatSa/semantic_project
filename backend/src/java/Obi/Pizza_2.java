@@ -1,4 +1,4 @@
-package Pizza;
+package Obi;
 
 import Model.Ontology;
 import Model.Statistics;

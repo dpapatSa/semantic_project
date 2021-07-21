@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pizza;
+package Obi;
 
 import Model.Ontology;
 import Model.Statistics;
